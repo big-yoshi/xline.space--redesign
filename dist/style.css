@@ -22,6 +22,7 @@ body {
   width: 100%;
   display: grid;
   grid-gap: 90px;
+  position: relative;
 }
 .section-1 .center {
   position: absolute;
@@ -91,6 +92,7 @@ body {
   width: 100%;
   margin-bottom: 10em;
   display: grid;
+  position: relative;
   grid-template-columns: 60% 37%;
 }
 .section-2 .img {
@@ -140,6 +142,7 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
+  position: relative;
 }
 .section-3 .overlay .left {
   position: absolute;
@@ -205,6 +208,7 @@ body {
   height: 400px;
   display: grid;
   place-items: center;
+  position: relative;
 }
 .section-4 .table {
   height: 100%;
@@ -387,6 +391,7 @@ body {
 .section-6 {
   height: 600px;
   width: 100%;
+  position: relative;
   display: grid;
   grid-template-columns: 35% 65%;
 }
@@ -406,4 +411,104 @@ body {
   color: white;
   font-size: 29px;
   place-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .section-1 {
+    grid-gap: 0;
+  }
+  .section-1 .center {
+    display: none;
+  }
+  .section-1 .black {
+    background-image: url("https://images.pexels.com/photos/208308/pexels-photo-208308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") !important;
+    background-size: cover !important;
+  }
+  .section-1 .black::after {
+    content: '';
+    background: rgba(0, 0, 0, 0.7);
+    height: auto;
+  }
+  .section-1 .navbar img {
+    max-width: 100%;
+    height: 100% !important;
+  }
+  .section-1 .navbar .pages li {
+    font-size: 17px !important;
+  }
+  .section-1 .landing-title {
+    place-self: center !important;
+    text-align: center;
+  }
+  .section-1 .landing-title h1 {
+    font-size: 54px !important;
+    margin: 7px;
+  }
+  .section-1 .landing-title h3 {
+    font-size: 24px !important;
+    margin-left: 10px !important;
+  }
+
+  .section-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 5em;
+    margin-top: 5em;
+  }
+  .section-2 .img {
+    display: none;
+  }
+  .section-2 .about {
+    display: grid;
+  }
+  .section-2 .about div {
+    place-self: center;
+    justify-self: center;
+    width: 85%;
+  }
+  .section-2 .about h1 {
+    font-size: 44px !important;
+  }
+  .section-2 .about p {
+    font-size: 20px !important;
+  }
+
+  .section-3 .overlay .left {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    place-self: center;
+    display: grid;
+    place-items: center;
+    grid-gap: 10px;
+    left: 0;
+  }
+  .section-3 .overlay .right {
+    display: none;
+  }
+
+  .section-4 {
+    margin-top: 9em;
+    margin-bottom: 9em;
+    height: auto !important;
+  }
+  .section-4 .table {
+    grid-template-columns: 1fr;
+    grid-gap: 55px;
+  }
+
+  .apply .text {
+    max-height: 600px;
+    width: auto;
+    max-width: 80% !important;
+  }
+
+  .section-6 .left iframe {
+    width: 300px;
+    height: 410px;
+    left: 10%;
+  }
+  .section-6 .right h1 {
+    display: none;
+  }
 }
