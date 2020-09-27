@@ -8,6 +8,10 @@ body {
   padding: 0;
 }
 
+body {
+  display: grid;
+}
+
 .link {
   transition: all 1s ease;
 }
@@ -15,6 +19,41 @@ body {
 .link:hover {
   animation: rubberBand;
   animation-duration: 1s;
+}
+
+.menu {
+  position: absolute;
+  z-index: 9999999;
+  align-self: start;
+  justify-self: end;
+  margin: 10px;
+  background: white 0% 0% no-repeat padding-box;
+  visibility: hidden;
+  padding: 10px;
+  border-radius: 4px;
+}
+.menu i {
+  font-size: 25px;
+  cursor: pointer;
+  color: #313131;
+}
+
+.mb-nav {
+  opacity: 1;
+  background: #fca311d1 0% 0% no-repeat padding-box;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 999999;
+  display: grid;
+  text-align: center;
+  place-items: center;
+  visibility: hidden;
+}
+.mb-nav a {
+  color: #313131;
+  text-decoration: none;
+  font-size: 30px;
 }
 
 .section-1 {
@@ -141,18 +180,20 @@ body {
   background: #fca311d1 0% 0% no-repeat padding-box;
   height: 100%;
   width: 100%;
-  display: grid;
   position: relative;
+  display: grid;
+  place-items: center;
 }
-.section-3 .overlay .left {
-  position: absolute;
-  align-self: center;
-  left: 100px;
+.section-3 .overlay .services {
+  max-height: 60%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
-.section-3 .overlay .left h1 {
+.section-3 .overlay .services h1 {
   margin: 0;
   margin-bottom: 20px;
-  font-size: 85px;
+  font-size: 35px;
   text-align: left;
   font-weight: bold;
   letter-spacing: 2px;
@@ -161,19 +202,28 @@ body {
   opacity: 1;
   padding: 0;
 }
-.section-3 .overlay .left p {
+.section-3 .overlay .services p {
   margin: 0px;
   margin-bottom: 20px;
   padding: 0;
-  font-size: 23px;
-  text-align: left;
+  font-size: 17px;
   font-weight: 300;
   letter-spacing: 1px;
   color: #313131;
   opacity: 1;
-  width: 55%;
+  width: 70%;
 }
-.section-3 .overlay .left a {
+.section-3 .overlay .services div {
+  flex: 1;
+  position: relative;
+  background: white;
+  box-shadow: 0px 0px 9px #0000008f;
+  display: grid;
+  place-items: center;
+  height: auto;
+  margin: 10px;
+}
+.section-3 .overlay .services .left a {
   padding: 5px 35px 5px 35px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
@@ -183,24 +233,9 @@ body {
   text-decoration: none;
   transition: all 1s ease;
 }
-.section-3 .overlay .left a:hover {
+.section-3 .overlay .services .left a:hover {
   animation: rubberBand;
   animation-duration: 1s;
-}
-.section-3 .overlay .right {
-  background: #ffffff;
-  border-radius: 50px;
-  display: grid;
-  place-items: center;
-  box-shadow: 0px 0px 9px #0000008f;
-  height: 70px;
-  width: 70px;
-  color: #313131;
-  font-size: 30px;
-  align-self: center;
-  justify-self: end;
-  position: absolute;
-  right: 60px;
 }
 
 .section-4 {
@@ -413,6 +448,18 @@ body {
   place-items: center;
 }
 
+@media screen and (max-width: 375px) {
+  .menu {
+    visibility: visible;
+  }
+
+  .section-1 .black .navbar .pages {
+    display: none;
+  }
+  .section-1 .black .navbar .pages li {
+    font-size: 10px !important;
+  }
+}
 @media screen and (max-width: 800px) {
   .section-1 {
     grid-gap: 0;
@@ -425,9 +472,12 @@ body {
     background-size: cover !important;
   }
   .section-1 .black::after {
-    content: '';
+    content: "";
     background: rgba(0, 0, 0, 0.7);
     height: auto;
+  }
+  .section-1 .yellow {
+    max-height: 300px;
   }
   .section-1 .navbar img {
     max-width: 100%;
@@ -473,18 +523,47 @@ body {
     font-size: 20px !important;
   }
 
-  .section-3 .overlay .left {
-    position: absolute;
-    align-self: center;
-    justify-self: center;
-    place-self: center;
+  .section-3 {
+    height: auto;
+  }
+  .section-3 .overlay .services {
+    max-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .section-3 .overlay .services h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 35px;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #241518;
+    text-transform: capitalize;
+    opacity: 1;
+    padding: 0;
+  }
+  .section-3 .overlay .services p {
+    margin: 0px;
+    margin-bottom: 20px;
+    padding: 0;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #313131;
+    opacity: 1;
+    width: 70%;
+  }
+  .section-3 .overlay .services div {
+    flex: 1;
+    position: relative;
+    background: white;
+    box-shadow: 0px 0px 9px #0000008f;
     display: grid;
     place-items: center;
-    grid-gap: 10px;
-    left: 0;
-  }
-  .section-3 .overlay .right {
-    display: none;
+    height: auto;
+    margin: 10px;
   }
 
   .section-4 {
