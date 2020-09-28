@@ -74,6 +74,7 @@ body {
 .section-1 .black {
   background: #313131 0% 0% no-repeat padding-box;
   display: grid;
+  position: relative;
 }
 .section-1 .black .navbar {
   position: absolute;
@@ -429,12 +430,14 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: 35% 65%;
+  position: relative;
 }
 .section-6 .left {
   background: #fca311;
   display: grid;
   font-size: 26px;
   place-items: center;
+  position: relative;
 }
 .section-6 .left iframe {
   position: absolute;
@@ -463,6 +466,7 @@ body {
 @media screen and (max-width: 800px) {
   .section-1 {
     grid-gap: 0;
+    height: 500px;
   }
   .section-1 .center {
     display: none;
@@ -470,14 +474,22 @@ body {
   .section-1 .black {
     background-image: url("https://images.pexels.com/photos/208308/pexels-photo-208308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") !important;
     background-size: cover !important;
+    display: grid;
+  }
+  .section-1 .black .landing-title {
+    width: 100%;
+    display: grid;
+    position: absolute;
+    top: 120px;
   }
   .section-1 .black::after {
     content: "";
     background: rgba(0, 0, 0, 0.7);
     height: auto;
+    display: grid;
   }
   .section-1 .yellow {
-    max-height: 300px;
+    display: none;
   }
   .section-1 .navbar img {
     max-width: 100%;
